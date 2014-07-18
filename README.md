@@ -2,15 +2,15 @@
 Introduction
 ============
 
-GnuRadio blocks to handle CC1111 based packet format, whitening and CRC16.
-Typically, "<len (1 byte)><payload><CRC16 (2 bytes)>
+GNU Radio blocks to handle CC1111 based packet format (header, whitening and CRC16). 
+Tested between RFCat and HackRF One.
 
-Packet Encoder (Source) read data from gr.msg_queue(), given as parameter.
-Packet Decoder (Sink) send data to gr.msg_queue(), given as parameter.
+- Packet Encoder (Source) read payload from gr.msg_queue(), given as parameter.
+- Packet Decoder (Sink) send payload to gr.msg_queue(), given as parameter.
 
 Status
 ======
-Beta version
+- Beta version
 
 Documentation
 =============
