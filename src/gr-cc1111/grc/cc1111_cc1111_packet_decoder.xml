@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<block>
+	<name>Packet Decoder (CC1111) Sink</name>
+  	<key>cc1111_cc1111_packet_decoder</key>
+	<category>CC1111</category>
+	<import>import cc1111</import>
+	<make>cc1111.cc1111_packet_decoder($target_queue,$do_unwhitening, $do_crc16_check, $verbose, $drop_header)</make>
+
+        <param>
+                <name>Target Message Queue</name>
+                <key>target_queue</key>
+                <type>raw</type>
+        </param>
+        <param>
+                <name>Whitening</name>
+                <key>do_unwhitening</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+
+        <param>
+                <name>Check CRC16</name>
+                <key>do_crc16_check</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+ 
+        <param>
+                <name>Remove Header</name>
+                <key>drop_header</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+
+
+        <param> 
+                <name>Verbose</name>
+                <key>verbose</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+	<sink>
+    		<name>in</name>
+    		<type>byte</type>
+  	</sink>
+  
+	<source>
+    		<name>out</name>
+    		<type>byte</type>
+  	</source>
+</block>
+
+
+

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<block>
+  <name>Packet Encoder (CC1111) Source</name>
+  <key>cc1111_cc1111_packet_encoder</key>
+  <category>CC1111</category>
+  <import>import cc1111</import>
+        <make>cc1111.cc1111_packet_mod_base(cc1111.cc1111_packet_encoder(
+                samples_per_symbol=$samples_per_symbol,
+                bits_per_symbol=$bits_per_symbol,
+                preamble=$preamble,
+                access_code=$access_code,
+                pad_for_usrp=$pad_for_usrp,
+		do_whitening=$do_whitening,
+		add_crc=$add_crc
+        ),
+	source_queue=$source_queue
+	)</make>
+
+        <param>
+                <name>Source Queue</name>
+                <key>source_queue</key>
+                <type>raw</type>
+        </param>
+        <param>
+                <name>Samples/Symbol</name>
+                <key>samples_per_symbol</key>
+		
+                <type>int</type>
+        </param>
+        <param>
+                <name>Bits/Symbol</name>
+                <key>bits_per_symbol</key>
+                <type>int</type>
+        </param>
+        <param>
+                <name>Preamble</name>
+                <key>preamble</key>
+                <value></value>
+                <type>string</type>
+        </param>
+        <param>
+                <name>Access Code</name>
+                <key>access_code</key>
+                <value></value>
+                <type>string</type>
+        </param>
+        <param>
+                <name>Pad for USRP</name>
+                <key>pad_for_usrp</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+
+        <param>
+                <name>Whitening</name>
+                <key>do_whitening</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+
+        <param>
+                <name>Add CRC</name>
+                <key>add_crc</key>
+                <type>enum</type>
+                <option>
+                        <name>Yes</name>
+                        <key>True</key>
+                </option>
+                <option>
+                        <name>No</name>
+                        <key>False</key>
+                </option>
+        </param>
+
+        <source>
+                <name>out</name>
+                <type>byte</type>
+        </source>
+</block>
