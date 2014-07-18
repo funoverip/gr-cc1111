@@ -15,6 +15,7 @@ Status
 Documentation
 =============
 - TODO
+- Some more explanations can be found here: http://funoverip.net/2014/07/gnu-radio-cc1111-packets-encoderdecoder-blocks/
 - See grc/*.png as flow graph examples
 - See testing-scripts/* as complete examples (FSK modulation/demodulation between RFCat and HackRF One)
 
