@@ -1,0 +1,113 @@
+
+No RF communications
+====================
+
+$ ./local_loop.py 
+Using Volk machine: sse4_2_32_orc
+cc1111_packet_decoder_impl::pn9_init_table(): TODOOOOOOOOOOO
+Pushing message
+   Send: Hello from local_loop (0)
+Polling message
+   Recv: Hello from local_loop (0)
+Pushing message
+   Send: Hello from local_loop (1)
+Polling message
+   Recv: Hello from local_loop (1)
+Pushing message
+   Send: Hello from local_loop (2)
+Polling message
+   Recv: Hello from local_loop (2)
+^CW: interrupt received, proceeding
+
+
+
+FSK from RFcat to HackRF (mind the frequency offset)
+====================================================
+
+$ ./hackrf_receiver.py 433070000
+linux; GNU C++ version 4.6.3; Boost_104800; UHD_003.005.004-140-gfb32ed16
+
+Using Volk machine: sse4_2_32_orc
+gr-osmosdr v0.1.1-9-gc65d205d (0.1.2git) gnuradio v3.7.2.1-62-g6195ff3c
+built-in source types: file fcd rtl rtl_tcp uhd hackrf rfspace 
+Using HackRF One with firmware 2014.04.1 
+cc1111_packet_decoder_impl::pn9_init_table(): TODOOOOOOOOOOO
+[hackrf rcv] : 'Hello from RFCat ... (1)'
+[hackrf rcv] : 'Hello from RFCat ... (2)'
+[hackrf rcv] : 'Hello from RFCat ... (4)'
+[hackrf rcv] : 'Hello from RFCat ... (5)'
+[hackrf rcv] : 'Hello from RFCat ... (6)'
+[hackrf rcv] : 'Hello from RFCat ... (7)'
+[hackrf rcv] : 'Hello from RFCat ... (8)'
+[hackrf rcv] : 'Hello from RFCat ... (9)'
+^CYou pressed Ctrl+C!
+
+
+
+$ ./rfcat_sender.py 433058000
+Freq: 433058000
+[rfcat] Entering TX Mode
+[rfcat send] : 'Hello from RFCat ... (0)'
+[rfcat send] : 'Hello from RFCat ... (1)'
+[rfcat send] : 'Hello from RFCat ... (2)'
+[rfcat send] : 'Hello from RFCat ... (3)'
+[rfcat send] : 'Hello from RFCat ... (4)'
+[rfcat send] : 'Hello from RFCat ... (5)'
+[rfcat send] : 'Hello from RFCat ... (6)'
+[rfcat send] : 'Hello from RFCat ... (7)'
+[rfcat send] : 'Hello from RFCat ... (8)'
+[rfcat send] : 'Hello from RFCat ... (9)'
+[rfcat send] : 'Hello from RFCat ... (10)'
+[rfcat send] : 'Hello from RFCat ... (11)'
+^CW: interrupt received, proceeding
+
+
+
+
+FSK from HackRF to RFcat (mind the frequency offset)
+====================================================
+
+$ ./rfcat_receiver.py 433600000
+[rfcat] Entering RX Mode
+[rfcat recv] : 'Hello from HackRF One (1)'
+[rfcat recv] : 'Hello from HackRF One (3)'
+[rfcat recv] : 'Hello fro- HackRF Onu (4)'
+[rfcat recv] : 'Hello from HackRF One (5)'
+[rfcat recv] : 'Hello from HackRF One (6)'
+[rfcat recv] : 'Hello from HackRF Onu (7)'
+[rfcat recv] : 'Hello from HackRF One (9)'
+[rfcat recv] : 'Hello from HackRF One (10)'
+[rfcat recv] : 'Hello from HackRF One (11)'
+[rfcat recv] : 'Hello from HackRF One (12)'
+[rfcat recv] : 'Hello from HackRF One (13)'
+[rfcat recv] : 'Hello from HackRF One (14)'
+[rfcat recv] : 'Hello from HackRF One (15)'
+
+
+
+
+$ ./hackrf_sender.py 433615000
+linux; GNU C++ version 4.6.3; Boost_104800; UHD_003.005.004-140-gfb32ed16
+
+gr-osmosdr v0.1.1-9-gc65d205d (0.1.2git) gnuradio v3.7.2.1-62-g6195ff3c
+built-in sink types: uhd hackrf 
+Using HackRF One with firmware 2014.04.1 
+Using Volk machine: sse4_2_32_orc
+[hackrf send] : 'Hello from HackRF One (0)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (1)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (2)'
+UUUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (3)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (4)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (5)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (6)'
+UUUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (7)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (8)'
+UUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (9)'
+UUUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (10)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (11)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (12)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (13)'
+UUUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (14)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (15)'
+UUUUUUUUUUUUUUU[hackrf send] : 'Hello from HackRF One (16)'
+
