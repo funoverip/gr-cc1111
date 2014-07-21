@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-	<name>Packet Decoder (CC1111) Sink</name>
+	<name>Packet Decoder (CC1111)</name>
   	<key>cc1111_cc1111_packet_decoder</key>
 	<category>CC1111</category>
 	<import>import cc1111</import>

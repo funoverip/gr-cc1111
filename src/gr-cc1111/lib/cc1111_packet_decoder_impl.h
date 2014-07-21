@@ -26,7 +26,7 @@
 #include <cstdio>
 	
 #define BUF_MAX_SIZE		2048    // bytes
-#define PN9_TABLE_SIZE		63
+#define PN9_TABLE_SIZE		511
 
 #define CRC16_POLY 		0x8005	// CRC16
 #define CRC_INIT 		0xFFFF
@@ -55,8 +55,7 @@ namespace gr {
         struct timeval time_sync_found;
 
 	// 99.9% inspired from https://github.com/matthijskooijman/arduino-max/blob/master/Pn9.cpp 
-	// 64 first PN9 numbers
-	unsigned char pn9_table[64]; 
+	unsigned char pn9_table[PN9_TABLE_SIZE]; 
 
      public:
       cc1111_packet_decoder_impl(msg_queue::sptr target_queue, bool do_unwhitening, bool do_crc16_check, bool verbose, bool drop_header);
