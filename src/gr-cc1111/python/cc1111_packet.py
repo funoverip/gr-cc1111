@@ -30,14 +30,9 @@ from gnuradio.digital import packet_utils
 import cc1111_packet_utils
 import gnuradio.gr.gr_threading as _threading
 
-##payload length in bytes
-#DEFAULT_PAYLOAD_LEN = 512
 
 ##how many messages in a queue
-DEFAULT_MSGQ_LIMIT = 1
-
-##threshold for unmaking packets
-#DEFAULT_THRESHOLD = 12
+DEFAULT_MSGQ_LIMIT = 2
 
 
 ##################################################
@@ -143,12 +138,7 @@ class cc1111_packet_mod_base(gr.hier_block2):
 			gr.io_signature(0, 0, 0), # Input signature
 			gr.io_signature(1, 1, packet_source._hb.output_signature().sizeof_stream_item(0)) # Output signature
 		)
-		#create blocks
-	#	msg_sink = blocks.message_sink(gr.sizeof_char, source_queue, False) #False -> blocking
-		#connect
-		#self.connect(self, msg_sink)
 		self.connect(packet_source, self)
 		#start thread
 		_cc1111_packet_encoder_thread(source_queue, packet_source.send_pkt)
-
 

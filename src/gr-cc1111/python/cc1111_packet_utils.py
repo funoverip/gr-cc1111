@@ -27,7 +27,6 @@
 import struct
 from gnuradio import gru
 from gnuradio.digital import packet_utils
-#from cc1111_swig import crc16
 
 CRC16_POLY =  0x8005
 CRC16_INIT =  0xFFFF
