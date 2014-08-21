@@ -23,10 +23,12 @@ Documentation
 Installation
 ============
 
-`cd src/gr-cc1111
+```
+cd src/gr-cc1111
 mkdir build
 cd build
 cmake ../
 make 
-sudo make install`
+sudo make install
+```
 
