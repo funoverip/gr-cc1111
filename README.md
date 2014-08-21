@@ -11,6 +11,7 @@ Tested between RFCat and HackRF One.
 Status
 ======
 - Beta version
+- Tested on GNURadio 3.7.4
 
 Documentation
 =============
@@ -19,5 +20,13 @@ Documentation
 - See grc/*.png as flow graph examples
 - See testing-scripts/* as complete examples (FSK modulation/demodulation between RFCat and HackRF One)
 
+Installation
+============
 
+`cd src/gr-cc1111
+mkdir build
+cd build
+cmake ../
+make 
+sudo make install`
 
