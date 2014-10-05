@@ -2,11 +2,18 @@
 Introduction
 ============
 
-GNU Radio blocks to handle CC1111 based packet format (header, whitening and CRC16). 
+GNU Radio blocks to handle CC1111 based packet format (header, whitening and CRC16).
 Tested between RFCat and HackRF One.
 
-- Packet Encoder (Source) read payload from gr.msg_queue(), given as parameter.
-- Packet Decoder (Sink) send payload to gr.msg_queue(), given as parameter.
+Provide the following GNU Radio blocks:
+- "Packet Encoder (CC1111) Source" : Read payloads from gr.msg_queue() and format them to CC11xx based packets.
+- "Packet Decoder (CC1111)" : Decode CC11xx formatted packets from a GR flow graph, and send payload to gr.msg_queue().
+
+Author
+======
+- Jerome Nokin 
+- http://funoverip.net
+- @funoverip.net
 
 Status
 ======
